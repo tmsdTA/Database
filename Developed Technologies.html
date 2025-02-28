@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developed Technologies</title>
+    <link rel="icon" href="images\TECHNO ASSESMENT LOGO.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .tab-content.active, .default-image.active {
+            display: block;
+        }
+        .default-image {
+            margin: 20px 0;
+            width: 50%;
+            height: auto;
+            align-self: center;
+        }
+        .tabs {
+            display: inline-flex;
+            background-color: #545454;
+            overflow: hidden;
+            width: 100%;
+        }
+        .tabs button {
+            background-color: #545454;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            flex-grow: 1;
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            border-bottom: none;
+            border-top: none;
+        }
+        .tabs button:hover {
+            background-color: #36454F;
+        }
+        .tabs button.active {
+            background-color: #363636;
+            border-bottom: 5px solid #02577a; 
+        }
+        .tab-content, .default-image {
+            display: none;
+            padding: 20px;
+            font-family: "Montserrat", serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(2, 87, 122, 0.9);
+            padding: 5px 10px;  
+            position: sticky;
+            top: 0;
+            font-family: "Anton", serif;
+        } 
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 80px;
+            width: auto;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .navbar .menu a:hover {
+            background-color: #575757;
+        }
+        .navbar-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .navbar .logo {
+                width: 100%;
+                justify-content: center;
+            }
+            .navbar .logo img {
+                height: 80px;
+            }
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar .menu a {
+                padding: 10px;
+                text-align: center;
+                border-top: 1px solid #575757;
+            }
+            .navbar-toggle {
+                display: block;
+                margin-left: auto;
+            }
+            .navbar .menu.active {
+                display: flex;
+            }
+        }
+        @media (max-width: 1200px) {
+            .header {
+                font-size: 6vw; 
+            }
+        }
+        @media (max-width: 768px) {
+            .header {
+                font-size: 8vw; 
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                font-size: 10vw;
+            }    
+        }
+        .gradient-line-a {
+            height: 5px;
+            background: linear-gradient(to right, #0d6980, #fff);
+            margin: 5px 0;
+        }
+        .gradient-line-b {
+            height: 5px;
+            background: linear-gradient(to right, #fff, #0d6980);
+            margin: 5px 0;
+        }   
+        .header {
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.925);
+            background-image: url('./images/RCH1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 5vw;
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }  
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #D3D3D3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .item {
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            transition: background-color 0.3s;
+            text-align: left;
+            font-size: larger;
+        }
+        .item:hover {
+            background-color: #e0e0e0;
+        }
+        @media (max-width: 768px){
+            .popup {
+                width: 80%;
+                height: auto;
+            }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: "Montserrat", serif;
+            font-size: large;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80%;
+            overflow-y: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            font-size: larger;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+        .close-btn {
+            background-color: #575757;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Montserrat", serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Index.html"><img src="images\PhilRice x TA white.svg" alt="Logo"></a>
+            <div class="navbar-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <div class="menu">
+            <a style="font-size: 20px;" href="Index.html">HOME</a>
+            <a style="font-size: 20px; border-bottom: 5px solid #363636;" href="Developed Technologies.html">DEVELOPED TECHNOLOGIES</a>
+            <a style="font-size: 20px;" href="Emerging Technologies.html">EMERGING TECHNOLOGIES</a>
+            <a style="font-size: 20px;" href="Matured Technologies.html">MATURED TECHNOLOGIES</a>
+        </nav>
+    <div class="gradient-line-a"></div>
+    <div class="header">
+        Developed Technologies
+    </div>
+    <div class="gradient-line-b"></div>
+        <div class="tabs">
+            <button style="font-size: larger; font-family: Montserrat, serif;"  class="tab-button" onclick="showTab(event,'tab1')" >Process</button>
+            <button style="font-size: larger; font-family: Montserrat, serif;"  class="tab-button" onclick="showTab(event,'tab2')">Product</button>
+            <button style="font-size: larger; font-family: Montserrat, serif;"  class="tab-button" onclick="showTab(event,'tab3')">Diagnostics and Decision Support Tools</button>
+        </div>
+    <img src="images\TA LOGO DEFAULT IMAGE 2.svg" alt="Default Image" class="default-image active" id="defaultImage">
+        <div id="tab1" class="tab-content">
+            <div class="container">
+                <h1 style="text-align: center;">Process</h1>
+                <div class="item" onclick="openPopup('PRO1')">POT for Drip Irrigated Aerobic Rice</div>
+                <div class="item" onclick="openPopup('PRO2')">POT on BMP for rainfed environment</div>
+                <div class="item" onclick="openPopup('PRO3')">Package of technologies (POT) on Modernized Rice Production Technologies For Irrigated Lowland Ecosystem</div>
+                <div class="item" onclick="openPopup('PRO4')">Stabilized brown rice</div>
+                <div class="item" onclick="openPopup('PRO5')">Process of producing mushrooms using rice straw and farm biomass combinations added with nutrient supplements</div>
+                <div class="item" onclick="openPopup('PRO6')">Commercial uses of spent mushroom substrate</div>
+                <div class="item" onclick="openPopup('PRO7')">OBNM for OBRice Production Management</div>
+                <div class="item" onclick="openPopup('PRO8')">Calibration models for non-destructive NIR-based determination of moisture content, crude protein content, amylose content, and gelatinization temperature of milled rice and rice flour samples</div> 
+                <div class="item" onclick="openPopup('PRO9')">Capillary Irrigation System</div>
+
+            </div>
+            </div>
+        <div id="tab2" class="tab-content">
+            <div class="container">
+                <h1 style="text-align: center;">Product</h1>
+                <div class="item" onclick="openPopup('PROD27')">Riding Type Boat Tiller</div>
+                <div class="item" onclick="openPopup('PROD26')">Portable Type Brown Rice Machine</div>
+                <div class="item" onclick="openPopup('PROD25')">Rice Hull Gasifier Engine-Pump System</div>
+                <div class="item" onclick="openPopup('PROD24')">Pedal Type Brown Rice Machine</div>  
+                <div class="item" onclick="openPopup('PROD23')">Bamboo-bin Dryer</div>
+                <div class="item" onclick="openPopup('PROD2')">Combined Conduction and Far Infrared Radiation Paddy Dryer</div>
+                <div class="item" onclick="openPopup('PROD3')">Localized Mushroom Substrate Bagger</div>
+                <div class="item" onclick="openPopup('PROD4')">PhilRice Cabinet-type Mushroom Solar Dryer</div>
+                <div class="item" onclick="openPopup('PROD5')">Localized Rice Straw Baler</div>
+                <div class="item" onclick="openPopup('PROD6')">Rice wine lees flour</div>
+                <div class="item" onclick="openPopup('PROD7')">Vegetable-fortified rice cookies</div>
+                <div class="item" onclick="openPopup('PROD8')">Aquaculture feed ingredient from blue -green algae (BGA)</div>
+                <div class="item" onclick="openPopup('PROD9')">Red Mold Rice Cookie</div>
+                <div class="item" onclick="openPopup('PROD10')">Pandesal with Chilli Leaves</div>
+                <div class="item" onclick="openPopup('PROD11')">Nano-encapsulated Anthocyanin Extract</div>
+                <div class="item" onclick="openPopup('PROD12')">Rice-Adlai Energy Bar</div>
+                <div class="item" onclick="openPopup('PROD13')">Low Protein Rice</div>
+                <div class="item" onclick="openPopup('PROD14')">Instant GABA Rice Congee</div>
+                <div class="item" onclick="openPopup('PROD15')">Rice Bran Noodles</div>
+                <div class="item" onclick="openPopup('PROD16')">Rice-taro crinkle premix</div>
+                <div class="item" onclick="openPopup('PROD17')">Frozen dough ball with rice ice cream</div>
+                <div class="item" onclick="openPopup('PROD18')">Ready-to-Eat Gamma Amino Butyric Acid (GABA) Rice Meal; A Nutritious Calamity Food</div>
+                <div class="item" onclick="openPopup('PROD19')">Rice Malt and Soy Beverage</div>
+                <div class="item" onclick="openPopup('PROD20')">Brown Rice Cracker Ice Cream Sandwich (BRICS)</div>
+                <div class="item" onclick="openPopup('PROD21')">Instant Enriched Am</div>
+                <div class="item" onclick="openPopup('PROD22')">Black Rice Bran Juice</div>
+                <div class="item" onclick="openPopup('PROD28')">Vegetable-fortified rice-fish crackers</div>  
+                <div class="item" onclick="openPopup('PROD29')">Biofertilizer from BGA</div>  
+                <div class="item" onclick="openPopup('PROD30')">Red Mold Rice Diet Supplement</div>  
+                <div class="item" onclick="openPopup('PROD31')">Complementary Food</div>  
+                <div class="item" onclick="openPopup('PROD32')">Rice Brew</div>  
+                <div class="item" onclick="openPopup('PROD33')">Rice Bran Biscuit</div>    
+            </div>
+            </div>
+        <div id="tab3" class="tab-content">
+            <div class="container">
+                <h1 style="text-align: center;">Diagnostics and Decision Support Tools</h1>
+                <div class="item" onclick="openPopup('popup')">PalayStat Website</div>
+                <div class="item" onclick="openPopup('popup2')">WIDGEN</div>
+                <div class="item" onclick="openPopup('popup3')">DataBro</div>
+                <div class="item" onclick="openPopup('popup4')">Oryza GEMS</div>
+                <div class="item" onclick="openPopup('popup5')">AutoMonPH Web App</div>
+                <div class="item" onclick="openPopup('popup6')">Rice ICT-Based Sensory System</div>
+                <div class="item" onclick="openPopup('popup7')">Rice Grain Dimensions Measuring App</div>
+                <div class="item" onclick="openPopup('popup8')">Grain Quality- Rice Information System </div>
+            </div>
+            </div>
+    </div>
+    <div class="popup" id="PRO1">
+        <div class="popup-content">
+            <h2>POT for Drip Irrigated Aerobic Rice</h2>
+            <p style="text-align: justify;">Combination of water, nutrient (fertigation), and weed management of drip irrigated aerobic rice for rainfed lowland and hilly land</p>
+            <button class="close-btn" onclick="closePopup('PRO1')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO2">
+        <div class="popup-content">
+            <h2>POT on BMP for rainfed environment</h2>
+            <p style="text-align: justify;">Combination of quality seed Mechanized crop establishment, water management, and weed management</p>
+            <button class="close-btn" onclick="closePopup('PRO2')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO3">
+        <div class="popup-content">
+            <h2>Package of technologies (POT) on Modernized Rice Production Technologies For Irrigated Lowland Ecosystem</h2>
+            <p style="text-align: justify;">Package of Technologies (POT) developed suitable for irrigated area using mechanized technologies / decision support tool [mechanical transplanting (mechanical transplanter), MOET/LCC for nutrient management, and combine harvester] in increasing grain yield farmers' income. The POT covers processes from seed selection to harvest management.</p>
+            <button class="close-btn" onclick="closePopup('PRO3')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO4">
+        <div class="popup-content">
+            <h2>Stabilized brown rice</h2>
+            <p style="text-align: justify;">A final product of steam heating brown rice for 10 min and oven drying at 70°C for 1 hr. The shelf-life of stabilized brown rice is almost 1 year at ambient temperature</p>
+            <button class="close-btn" onclick="closePopup('PRO4')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO5">
+        <div class="popup-content">
+            <h2>Process of producing mushrooms using rice straw and farm biomass combinations added with nutrient supplements</h2>
+            <p style="text-align: justify;">Method of producing mushrooms using rice straw and farm biomass combinations added with nutrient supplements (10% rice bran, 10% bokashi, and 30% corn powder)</p>
+            <button class="close-btn" onclick="closePopup('PRO5')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO6">
+        <div class="popup-content">
+            <h2>Commercial uses of spent mushroom substrate</h2>
+            <p style="text-align: justify;">Method of converting spent mushroom substrate as fuel for cooking, feed supplement, and plant media</p>
+            <button class="close-btn" onclick="closePopup('PRO6')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO7">
+        <div class="popup-content">
+            <h2>OBNM for OBRice Production Management</h2>
+            <p style="text-align: justify;">Package of Technologies (POT) developed suitable for irrigated area using mechanized technologies / decision support tool [mechanical transplanting (mechanical transplanter), MOET/LCC for nutrient management, and combine harvester] in increasing grain yield farmers' income. The POT covers procesess from seed selection to harvest management.</p>
+            <button class="close-btn" onclick="closePopup('PRO7')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO8">
+        <div class="popup-content">
+            <h2>Calibration models for non-destructive NIR-based determination of moisture content, crude protein content, amylose content, and gelatinization temperature of milled rice and rice flour samples</h2>
+            <p style="text-align: justify;">Fast and reliable automated prediction of milled rice and rice flour physicochemical properties (MC, AC, CP, and GT)</p>
+            <button class="close-btn" onclick="closePopup('PRO8')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PRO9">
+        <div class="popup-content">
+            <h2>Capillary Irrigation System</h2>
+            <p style="text-align: justify;">This technology is described by its generators as a system of irrigating rice-based crops that is almost similar with the drip irrigation system, but one which makes use of capillary wicks instead of drippers. Conceptualized for the use of small-holder rice-based farmers, the Capillarigation system utilizes local materials and is said to be simple enough to be established by the farmers themselves.</p>
+            <button class="close-btn" onclick="closePopup('PRO9')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD1">
+        <div class="popup-content">
+            <h2>Multi-Purpose Riding-type Mini-tractor (Makisig)</h2>
+            <p style="text-align: justify;">This machine is designed to perform functions that are beyond the capability of existing hand tractors and 4W mini-tractors so as to help farmers cope up with the various challenges caused by climate change. In particular, it is designed to be able to work in deep mud-conditions, which happens to rice fields affected by floods and landslides. In addition to land preparation, it is also designed to perform functions like digging canals for conveying water, for constructing small ponds for rainwater harvesting, and drilling shallow tubewells.</p>
+            <button class="close-btn" onclick="closePopup('PROD1')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD2">
+        <div class="popup-content">
+            <h2>Combined Conduction and Far Infrared Radiation Paddy Dryer</h2>
+            <p style="text-align: justify;">A new rapid drying technology for paddy using a combined conduction and far infrared radiant heating process. The combined principles of conduction and far-infrared radiation can be a major breakthrough in the field of paddy drying. The use of rice husk gasification technology for providing heat energy requirements would entirely eliminate the high cost of and dependence on imported fossil fuel.</p>
+            <button class="close-btn" onclick="closePopup('PROD2')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD3">
+        <div class="popup-content">
+            <h2>Localized Mushroom Substrate Bagger</h2>
+            <p style="text-align: justify;">Replaces laborious and time consuming manual bagging of mushroom substrate</p>
+            <button class="close-btn" onclick="closePopup('PROD3')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD4">
+        <div class="popup-content">
+            <h2>PhilRice Cabinet-type Mushroom Solar Dryer</h2>
+            <p style="text-align: justify;">Reduces moisture content of mushrooms to a level safe for storage for an extended shelf life using solar energy</p>
+            <button class="close-btn" onclick="closePopup('PROD4')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD5">
+        <div class="popup-content">
+            <h2>Localized Rice Straw Baler</h2>
+            <p style="text-align: justify;">Mechanically gathers the scattered rice straw in the field after combine harvesting, then compress the rice straw</p>
+            <button class="close-btn" onclick="closePopup('PROD5')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD6">
+        <div class="popup-content">
+            <h2>Rice wine lees flour</h2>
+            <p style="text-align: justify;">A shelf-stable flour product developed from the tapuy lees, or the residue from tapuy manufacture. The flour can be used in various food products (e.g. baked goods, polvoron, fresh and dry noodles) to improve their protein and/or fiber content as a means to deliver food products with improved nutritional content to Filipino consumers while reducing wastes generated by tapuy manufacture.</p>
+            <button class="close-btn" onclick="closePopup('PROD6')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD7">
+        <div class="popup-content">
+            <h2>Vegetable-fortified rice cookies</h2>
+            <p style="text-align: justify;">Rice cookies incorporated with appropriate levels of fresh and powdered malunggay leaves and squash fruit. The developed products had high consumer accpetability among adult consumers, particularly the squash-fortified cookie. These products meant to enhance nutrition among target populations using a popular snack food as vehicle for fortification.</p>
+            <button class="close-btn" onclick="closePopup('PROD7')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD8">
+        <div class="popup-content">
+            <h2>Aquaculture feed ingredient from blue -green algae (BGA)</h2>
+            <p style="text-align: justify;">This aqualcuture feed ingredient is made from fibrous algae present in inland water resources such as ponds and rice paddies in combination with commercial fish-feeds. Nile tilapia fed with fibrous algae has 38.85% growth percentage and 91.67% survival at 25:75 algae and commercial feed ratio. This technology hopes to improve the economic status of farmers by mass producing the algae that can be collected from ponds and rice paddies and process them into an aquaculture feed ingredient.</p>
+            <button class="close-btn" onclick="closePopup('PROD8')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD9">
+        <div class="popup-content">
+            <h2>Red Mold Cookie</h2>
+            <p style="text-align: justify;">A rice-based cookie product made from a solid state fermentation of NSIC Rc160 rice with M. purpureus dried, pulverized and sterilized to become a RMR powder. RMR powder significantly increase the dietary fiber and antioxidant capacity of the cookies without compromising the eating quality of the product with high consumer acceptability which shows good market acceptability.</p>
+            <button class="close-btn" onclick="closePopup('PROD9')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD10">
+        <div class="popup-content">
+            <h2>Pandesal with Chilli Leaves</h2>
+            <p style="text-align: justify;">It is basically made with flour, yeast, egg and milk. Since salt bread is eaten by most Filipinos of all ages everyday, it is a perfect vehicle for supplementation. Addition of nutrient-rich indigenous vegetables, such as squash and leafy moringa, in bread has been shown to effectively enhance its nutrient profile.The use of chili pepper leaves as an inexpensive ingredient to boost the nutritional quality of salt bread was therefore investigated.</p>
+            <button class="close-btn" onclick="closePopup('PROD10')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD11">
+        <div class="popup-content">
+            <h2>Nano-encapsulated Anthocyanin Extract</h2>
+            <p style="text-align: justify;">A product of laboratory scale nano-encapsulation technology and is made with pure anthocyanin extract from black rice bran encapsulated through the use of chitosan alginate nanoparticles.</p>
+            <button class="close-btn" onclick="closePopup('PROD11')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD12">
+        <div class="popup-content">
+            <h2>Rice-Adlai Energy Bar</h2>
+            <p style="text-align: justify;">This product is a convenient snack item or meal substitute for people on-the-go. This is commonly consumed between meals and or even as meal-energy bar. A 30g serving of the energy bars could give 140 calories of energy which is comparable with other commercially available energy bars that can be store up to 8 weeks with ambient conditions.</p>
+            <button class="close-btn" onclick="closePopup('PROD12')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD13">
+        <div class="popup-content">
+            <h2>Low Protein Rice</h2>
+            <p style="text-align: justify;">Low protein rice is a pre-cooked, protein-reduced rice intended for individuals who want to continue consuming rice even on a low-protein diet. The samples were prepared from different Philippine rice varieties with varying Amylose Content.</p>
+            <button class="close-btn" onclick="closePopup('PROD13')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD14">
+        <div class="popup-content">
+            <h2>Instant GABA Rice Congee</h2>
+            <p style="text-align: justify;">Instant GABA Rice Congee is a functional food product, shelf-stable suitable for emergencies, calamities and disasters. Instant GABA rice congee has energy-boosting, health promoting, and mental-enhancing properties making it suitable as functional food. Based on its functional properties, GABA rice is suitable for instant GBR congee at 1:6 rice: broth ratio based on consumer acceptability and it is safe for consumption based on its acceptable microbial quality.</p>
+            <button class="close-btn" onclick="closePopup('PROD14')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD15">
+        <div class="popup-content">
+            <h2>Rice Bran Noodles</h2>
+            <p style="text-align: justify;">Noodles are convenient wheat-based food popularly consumed throughout the world rich in carbohydrate but usually deficient in essential nutrients which are lost during wheat refinement. Rice bran, an agricultural by-product abundant in fiber, antioxidants, vitamins, and minerals, was utilized as a functional ingredient for noodles to maximize its use for the prevention of lifestyle diseases linked to poor intake of dietary fiber and carbohydrates. The process includes (1) rice bran preparation - dehulling and polishing of rice; and (2) Noodles preparation – mixing the dough, kneading and flatting, cutting, and cooking. Supplementation of fresh wheat noodles with 10% rice bran significantly improved the dietary fiber, phenolic content, and total antioxidant capacity of the product without affecting the overall sensory acceptability.</p>
+            <button class="close-btn" onclick="closePopup('PROD15')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD16">
+        <div class="popup-content">
+            <h2>Rice-taro crinkle premix</h2>
+            <p style="text-align: justify;">A bakery premix developed from optimum blend of rice and taro flours. The product produced has an enhanced dietary fiber and higher energy value than some commercial products. This product intended to increase utilization of taro, a vegetable commonly grown in rice-based farms, and to offer nutritionally enriched and innovative product for consumers.</p>
+            <button class="close-btn" onclick="closePopup('PROD16')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD17">
+        <div class="popup-content">
+            <h2>Frozen dough ball with rice ice cream</h2>
+            <p style="text-align: justify;">A frozen pastry product with rice cream filling, which is an innovative take on the "ice cream on bread" traditionally enjoyed by Filipinos during the summer months.</p>
+            <button class="close-btn" onclick="closePopup('PROD17')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD18">
+        <div class="popup-content">
+            <h2>Ready-to-Eat Gamma Amino Butyric Acid (GABA) Rice Meal; A Nutritious Calamity Food</h2>
+            <p style="text-align: justify;">This product results from the germination of rice known to have energy boosting, health promoting, and mental-enhancing properties. It is a good source of protein, dietary fiber, carbohydrates, and essential minerals such as iron, calcium, and sodium. Within today’s fast-paced lifestyle, instant food easily gets the approval of consumers due to its affordability, availability, accessibility, and most importantly, convenience. Instant food is shelf-stable making it a suitable food during calamities. GABA rice has energy boosting and health promoting properties and contains mental-enhancing properties such as gamma-oryzanol and gamma-aminobutyric acid.</p>
+            <button class="close-btn" onclick="closePopup('PROD18')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD19">
+        <div class="popup-content">
+            <h2>Rice Malt and Soy Beverage</h2>
+            <p style="text-align: justify;">Rice Malt and Soy beverage are non-dairy ready-to-drink beverages that can serve as an effective vehicle to deliver the essential nutrients needed for optimal growth and development and may alleviate the persistent problem in undernutrition and lactose intolerance among school children, youth, young adults and adults. The final products underwent various product analysis such as consumer sensory evaluation, physicochemical analysis, microbial analysis, and nutritional analysis. Malt drink with 30% soymilk can produce an acceptable and nutritious non-dairy ready-to-drink beverage that is safe for consumption and suitable for lactose intolerant individuals. It was also showed that malted rice is appealing to 3-12-year-old children and can support their daily energy and nutrient needs.</p>
+            <button class="close-btn" onclick="closePopup('PROD19')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD20">
+        <div class="popup-content">
+            <h2>Brown Rice Cracker Ice Cream Sandwich (BRICS)</h2>
+            <p style="text-align: justify;">BRICS is a nutrient-rich snack made from nutritious brown rice flour and buffalo’s milk. It is one of the rice-based value-added products developed by PhilRice for additional source of income and for the improvement of nutrition in rice-based farm communities. BRICS is highly acceptable value added product with high acceptability from consumers. A pre-feasibility study was conducted for this technology to ensure marketability and to serve as guide for potential industry takers and investor. Results show that BRICS is highly acceptable value-added based on the consumer acceptability.</p>
+            <button class="close-btn" onclick="closePopup('PROD20')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD21">
+        <div class="popup-content">
+            <h2>Instant Enriched Am</h2>
+            <p style="text-align: justify;">Instant Enriched Am is a good complementary food for babies and small children. This technology is an instant version of am made as substitute to boiled rice water (Am) when mothers weaned their child from breast milk feeding. Traditional preparation of Am is tedious and prone to spoilage that may pose safety risk to infants but this Instant Am is more convenient to use, safe to consume, economical, and has longer shelf-life. However, it only contains mostly carbohydrates with trace amounts of micronutrients, which is not sufficient to supply the nutritional needs for the growth and development of its target consumers.</p>
+            <button class="close-btn" onclick="closePopup('PROD21')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD22">
+        <div class="popup-content">
+            <h2>Black Rice Bran Juice</h2>
+            <p style="text-align: justify;">A healthy and nutritious ready-to-drink beverage made with pure extracts of stabilized black rice bran, freshly squeezed citrus fruits, and honey or brown sugar. This product is loaded with antioxidants enhances our immunity against several chronic diseases such as cancers and cardiovascular diseases</p>
+            <button class="close-btn" onclick="closePopup('PROD22')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD23">
+        <div class="popup-content">
+            <h2>Bamboo-bin Dryer</h2>
+            <p style="text-align: justify;">The Bamboo-bin Dryer consists of three main parts: 1. the drying bin made of two concentric bamboo mats (the bigger one stores grains; the smaller one, wrapped around a steel bar frame which serves as plenum); 2. the blower, with small electric motor and automotive fan blade which provides the drying air; and 3. the heater, 2-kW resistor coil, which slightly raises the temperature of drying air.</p>
+            <button class="close-btn" onclick="closePopup('PROD23')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD24">
+        <div class="popup-content">
+            <h2>Pedal Type Brown Rice Machine</h2>
+            <p style="text-align: justify;">The Pedal-type brown rice produces healthy brown rice through pedaling like a bike. This requires a one-man peddler to dehull 1-2kg rice in an hour. The pedal-powered brown rice machine features a simple, user- friendly design capable of meeting the daily 1-kilogram brown rice requirement for a family of five. The entire assembly is mounted on a sturdy frame with a seat and pedals, similar to those on a bicycle, making it easy to operate and efficient.</p>
+            <button class="close-btn" onclick="closePopup('PROD24')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD25">
+        <div class="popup-content">
+            <h2>Rice Hull Gasifier Engine Pump System</h2>
+            <p style="text-align: justify;">Utilizes rice husk biomass as a source of energy; minimizing gasoline fuel to run an engine. Farmers can save PhP2,000 to PhP15,000 from irrigation cost. Rice hull Gasifier is a cost-reducing technology that can be used as an alternative water harvesting method to provide irrigation water in the rice-based communities with limited access from grid water source for irrigation.</p>
+            <button class="close-btn" onclick="closePopup('PROD25')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD26">
+        <div class="popup-content">
+            <h2>Portable Type Brown Rice Machine</h2>
+            <p style="text-align: justify;">The improved prototype of the portable BRM designed for small enterprises to produce and sell brown rice in the community was fabricated at the PhilRice REMD workshop. It was made from locally available materials, has a simple design, and is easy to operate. The prototype adopted a small rubber roll huller similar to what can be bought locally but has vital modifications in the assembly and construction. The hulling mechanism comprised three rubber roll hullers instead of the usual pair of rubber roll hullers commonly found in the existing huller design.</p>
+            <button class="close-btn" onclick="closePopup('PROD26')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD27">
+        <div class="popup-content">
+            <h2>Riding Type Boat Tiller</h2>
+            <p style="text-align: justify;">Riding-type Boat Tiller is a machinery used for land preparation in a laboy field. This machine helped the farmer lessen the operating time, reduce labor and fuel costs, and maximize the field's usefulness for rice production.</p>
+            <button class="close-btn" onclick="closePopup('PROD27')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD28">
+        <div class="popup-content">
+            <h2>Vegetable-fortified rice-fish crackers</h2>
+            <p style="text-align: justify;">Rice-fish crackers incorporated with appropriate levels of fresh and powdered malunggay leaves and squash fruit. The developed products had improved nutritional content, e.g. beta-carotene, vitamin C and calcium, had high consumer acceptability among both young and adult consumers, and with good storage quality. These products were meant to enhance nutrition among target populations, specifically schoolchildren, using a popular snack food as vehicle for fortification.</p>
+            <button class="close-btn" onclick="closePopup('PROD28')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD29">
+        <div class="popup-content">
+            <h2>Biofertilizer from BGA</h2>
+            <p style="text-align: justify;">Biofertilizer from a local strain of BGA is made from dried propagated algae incombination with commercial organic fertilizer at 50% NPK + 50% BGA ratio. Rice fertlized with this combination has comparable rice grain yield, number of panicles, plant height, number of tillers, and leaf greenness with plant using 100% commercial inorganic fertilizer. This demonstrates the feasibility of utilizing BGA as a promising biofertilizer and hopes to reduce input cost in rice production.</p>
+            <button class="close-btn" onclick="closePopup('PROD29')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD30">
+        <div class="popup-content">
+            <h2>Red Mold Rice Diet Supplement</h2>
+            <p style="text-align: justify;">Red mold rice (RMR) is a traditional product usually food colorant resulting from the fermentation of starch-containing substrates like rice with Monascus purpureus. It is a diet supplement with Antidiabetic property, Cholesterol-lowering property, and Anticancer property.</p>
+            <button class="close-btn" onclick="closePopup('PROD30')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD31">
+        <div class="popup-content">
+            <h2>Complementary Food</h2>
+            <p style="text-align: justify;">To help improve nutrition in these areas of weaning period as a crucial time of an infant’s life, this study developed a plant-based complementary food premix from rice, soybean, and sweet potato for older infants aged 6-23 months. Ten complementary food premixes were formulated and optimized using D-optimal mixture design. Results showed that different proportion of flour blends had significant (p < 0.05) effects on protein, ash, fat, carbohydrates, water absorption index, swelling power, and consistency. The complementary food formulation with optimized nutrient quality, hydration properties, and consumer acceptance was obtained.</p>
+            <button class="close-btn" onclick="closePopup('PROD31')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD32">
+        <div class="popup-content">
+            <h2>Rice Brew</h2>
+            <p style="text-align: justify;">Rice brew is a healthy coffee alternative roasted and grinded from a rice variety spefically NSIC Rc 160.</p>
+            <button class="close-btn" onclick="closePopup('PROD32')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="PROD33">
+        <div class="popup-content">
+            <h2>Rice Bran Biscuit</h2>
+            <p style="text-align: justify;">A nutritious fiber-loaded snack biscuit made with stabilized rice bran. This product is packed with essential nutrients such as proteins, minerals, and fibers which are good in sustaining our energy and improving our digestion and immunity.</p>
+            <button class="close-btn" onclick="closePopup('PROD33')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="DIAG">
+        <div class="popup-content">
+            <h2></h2>
+            <p style="text-align: justify;"></p>
+            <button class="close-btn" onclick="closePopup('DIAG')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="DIAG">
+        <div class="popup-content">
+            <h2></h2>
+            <p style="text-align: justify;"></p>
+            <button class="close-btn" onclick="closePopup('DIAG')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="DIAG">
+        <div class="popup-content">
+            <h2></h2>
+            <p style="text-align: justify;"></p>
+            <button class="close-btn" onclick="closePopup('DIAG')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="DIAG">
+        <div class="popup-content">
+            <h2></h2>
+            <p style="text-align: justify;"></p>
+            <button class="close-btn" onclick="closePopup('DIAG')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup5">
+        <div class="popup-content">
+            <h2>AutoMonPH Web App</h2>
+            <p style="text-align: justify;">user-friendly online application for water level sensor evaluation and monitoring user interfaces.</p>
+            <button class="close-btn" onclick="closePopup('popup5')">Close</button>
+        </div>
+    </div>
+    <div class="popup" id="popup6">
+        <div class="popup-content">
+            <h2>Rice ICT-Based Sensory System</h2>
+            <p style="text-align: justify;">The Rice ICT-Based Sensory System (RISS) was initially developed in 2022 in partnership with the IT experts from the Information Systems Division to automate the tedious paper-based sensory evaluation of sensory attributes of milled rice and cooked grains.  In 2023, some key features of the system were improved, and actual performance was validated. At present, the RISS is now fully operational, accessible via the intranet, and effectively supports the routine evaluation of sensory characteristics of rice and rice-based food products.</p>
+            <button class="close-btn" onclick="closePopup('popup6')">Close</button>
+        </div>
+    </div>
+    <div class="popup" id="popup7">
+        <div class="popup-content">
+            <h2>Rice Grain Dimensions Measuring App</h2>
+            <p style="text-align: justify;">The dimensions of rice grains play a crucial role in determining consumer preferences and commercial value. Grain length and shape also influence rice grain yield and milling recovery. Improving these traits is one of the targets of the rice breeding programs. The caliper-based method can be labor-intensive and often subjective, and prone to human error. To address these issues, we have developed a smartphone-based application (App) that employs computer vision and deep learning to evaluate rice grain dimensions. A 3D-printed platform securely positions the smartphone at a calibrated distance above a grain holder to ensure accurate measurements. The App captures images of multiple grains simultaneously, which are then analyzed to determine the length (L), width (W), and shape (L/W) of each grain based on pixel dimensions and a pre-calibrated pixel-to-distance ratio.  The initial validation test of 146 rice samples showed a prediction accuracy of 98%, with analysis time reduced from 10 minutes to under two minutes compared to the conventional method. Pilot testing has already been performed in other research laboratories to assess the app’s reliability and accuracy further.  The App demonstrated good performance by achieving a 96% accuracy in predicting the grain length and shape of 22 rice samples evaluated by the CLSU-PhilSCAT laboratory analysts. In a separate evaluation conducted at PhilMech, the App’s prediction accuracy was 97% when tested with 31 unknown rice samples.</p>
+            <button class="close-btn" onclick="closePopup('popup7')">Close</button>
+        </div>
+    </div>
+    <div class="popup" id="popup8">
+        <div class="popup-content">
+            <h2>Grain Quality- Rice Information System</h2>
+            <p style="text-align: justify;">The Grain Quality – Rice Information System (GQ-RIS) serves as a central repository for information on rice grain quality, which includes details about milling recovery, physical attributes, physicochemical properties, and sensory characteristics. The system aims to provide an internet-accessible platform for efficient storage, retrieval, visualization, and management of rice grain quality data. Currently, the GQ-RIS contains relevant grain quality information for all Philippine-approved rice varieties, as well as NCT and pre-NCT rice lines. The GQ-RIS is in the testing phase, following an agile methodology. The user interface is under review while the Development Communication Team is proofreading the content. We are also updating the database and enhancing additional features to better meet user needs and expectations.</p>
+            <button class="close-btn" onclick="closePopup('popup8')">Close</button>
+        </div>
+    </div>
+    <script>
+             function toggleMenu() {
+        const menu = document.querySelector('.navbar .menu');
+        menu.classList.toggle('active');
+    }
+    function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'flex';
+            document.body.classList.add('modal-open');
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+            document.body.classList.remove('modal-open');
+     }
+        function showTab(event, tabId) {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            document.getElementById(tabId).classList.add('active');
+            var defaultImage = document.getElementById('defaultImage');
+            defaultImage.classList.remove('active');
+            const tabButtons = document.querySelectorAll('.tabs button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matured Technologies</title>
+    <link rel="icon" href="images/TECHNO ASSESMENT LOGO.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .tab-content.active, .default-image.active {
+            display: block;
+        }
+        .default-image {
+            margin: 20px 0;
+            width: 50%;    
+            height: auto;
+            align-self: center;
+        }
+        .tabs {
+            display: inline-flex;
+            background-color: #545454;
+            overflow: hidden;
+            width: 100%;
+        }
+        .tabs button {
+            background-color: #545454;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            flex-grow: 1;
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            border-bottom: none;
+            border-top: none;
+        }
+        .tabs button:hover {
+            background-color: #36454F;
+        }
+        .tabs button.active {
+            background-color: #363636;
+            border-bottom: 5px solid #02577a; 
+        }
+        .tab-content, .default-image {
+            display: none;
+            padding: 20px;
+            font-family: "Montserrat", serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(2, 87, 122, 0.9);
+            padding: 5px 10px;
+            position: sticky;
+            top: 0;
+            font-family: "Anton", serif;
+            font-weight: 200;
+        } 
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 80px;
+            width: auto;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .navbar .menu a:hover {
+            background-color: #575757;
+        }
+        .navbar-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .navbar .logo {
+                width: 100%;
+                justify-content: center;
+            }
+            .navbar .logo img {
+                height: 80px;
+            }
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar .menu a {
+                padding: 10px;
+                text-align: center;
+                border-top: 1px solid #575757;
+            }
+            .navbar-toggle {
+                display: block;
+                margin-left: auto;
+            }
+            .navbar .menu.active {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 1.2em;
+            }
+
+            .hamburger {
+                font-size: 1.8em;
+            }
+
+            .nav-links a {
+                padding: 15px;
+            }
+        }
+        @media (max-width: 1200px) {
+            .header {
+                font-size: 6vw; 
+            }
+        }
+        @media (max-width: 768px) {
+            .header {
+                font-size: 8vw; 
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                font-size: 10vw;
+            }
+
+        }
+        .gradient-line-a {
+            height: 5px;
+            background: linear-gradient(to right, #074523, #fff);
+            margin: 5px 0;
+        }
+        .gradient-line-b {
+            height: 5px;
+            background: linear-gradient(to right, #fff, #074523);
+            margin: 5px 0;
+        }   
+        .header {
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.925);
+            background-image: url('./images/lcc.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 5vw;
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }     
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid 	#d4f0fc;
+            border-radius: 5px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px 	#d4f0fc;
+            transition: transform 0.3s;
+            font-family: "Montserrat", serif;
+        }
+        .card img {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+        .card button {
+            background-color: #02577a;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-family: "Montserrat", serif;
+        }
+        .card button:hover {
+            background-color: #02a9f7;
+        }
+        @media (max-width: 1920px){
+            .popup {
+                width: 80%;
+                height: auto;
+            }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: "Montserrat", serif;
+            font-size: large;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80%;
+            overflow-y: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .carousel {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .close-btn {
+            background-color: #575757;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Montserrat", serif;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Index.html"><img src="images\PhilRice x TA white.svg" alt="Logo"></a>
+            <div class="navbar-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <div class="menu">
+            <a style="font-size: 20px;" href="Index.html">HOME</a>
+            <a style="font-size: 20px;" href="Developed Technologies.html">DEVELOPED TECHNOLOGIES</a>
+            <a style="font-size: 20px;" href="Emerging Technologies.html">EMERGING TECHNOLOGIES</a>
+            <a style="font-size: 20px; border-bottom: 5px solid #363636;" href="Matured Technologies.html">MATURED TECHNOLOGIES</a>
+        </nav>
+    <div class="popup-background" id="popup-background"></div>
+        <div class="gradient-line-a"></div>
+        <div class="header">
+            Matured Technologies
+        </div>
+<div class="gradient-line-b"></div>
+<div class="tabs">
+    <button style="font-size: larger" class="tab-button" onclick="showTab(event, 'tab1')">Promoted Before the Technology Assessment Project </button>
+    <button style="font-size: larger" class="tab-button" onclick="showTab(event, 'tab2')">Passed the STEEP Validation</button>
+</div>
+<img src="images\TA LOGO DEFAULT IMAGE 2.svg" alt="Default Image" class="default-image active" id="defaultImage">
+<div id="tab1" class="tab-content">
+    <div class="container">
+        <div class="card">
+            <img src="images\SC.png" alt="Fermented Rice Bran">
+            <h3 style=" color: #01303f;">Seed Cleaner &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup1')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\LT.png" alt="Laboy Tiller">
+            <h3 style=" color: #01303f;">Laboy Tiller &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup2')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\RAFD.png" alt="Reversible Airflow Flatbed Dryer">
+            <h3 style=" color: #01303f;">Reversible Airflow Flatbed Dryer</h3>
+            <button onclick="openPopup('popup3')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\DS.png" alt="Drum Seeder">
+            <h3 style=" color: #01303f;">Drum Seeder &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup4')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\Mmill.png" alt="Micro Mill">
+            <h3 style=" color: #01303f;">Micromill &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup5')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\MPS.png" alt="MP Seeder">
+            <h3 style=" color: #01303f;">Multi-Purpose Seeder</h3>
+            <button onclick="openPopup('popup6')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\WP.png" alt="Wind Pump">
+            <h3 style=" color: #01303f; font-size: 18.5px;">Wind Pump &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup7')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\RHGS.png" alt="Rice Husk Gas Stove">
+            <h3 style=" color: #01303f;">Rice Husk Gas Stove &emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup8')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\MT.png" alt="Micro Tiller">
+            <h3 style=" color: #01303f;">Microtiller &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup9')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\FD.png" alt="Flatbed Dryer">
+            <h3 style=" color: #01303f;">Maligaya Flatbed Dryer</h3>
+            <button onclick="openPopup('popup10')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\OTC.png" alt="Open Type Carbonizer">
+            <h3 style=" color: #01303f;">Open - Type Rice Hull Carbonizer</h3>
+            <button onclick="openPopup('popup12')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\MCF.png" alt="MultiCrop Flourmill">
+            <h3 style=" color: #01303f;">MultiCrop Flourmill &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup13')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\HTA.png" alt="Hand Tractor Attachment">
+            <h3 style=" color: #01303f;">Hand Tractor Attachment</h3>
+            <button onclick="openPopup('popup14')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\SAC.png" alt="Saclob">
+            <h3 style=" color: #01303f;">Saclob &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup15')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\EDA.png" alt="eDamuhan App">
+            <h3 style=" color: #01303f; font-size: 18.5px;">eDamuhan App &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup16')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\RR.png" alt="Rotary Reaper">
+            <h3 style=" color: #01303f;">Rotary Reaper &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup18')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\CTRHC.png" alt="Continuous - Type Rice Hull Carbonizer">
+            <h3 style=" color: #01303f; font-size:large;">Continuous - Type Rice Hull Carbonizer</h3>
+            <button onclick="openPopup('popup11')">VIEW</button>
+        </div>
+    </div>
+    </div>
+    <div id="tab2" class="tab-content">
+    <div class="container">
+        <div class="card">
+            <img src="images\KWB.png" alt="Kwebo">
+            <h3 style=" color: #01303f;">Kwebo &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup21')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\LCCPP.png" alt="LCC app">
+            <h3 style=" color: #01303f;">LCC app &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup22')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\VTBRM.png" alt="Village Type Brown Rice Machine">
+            <h3 style=" color: #01303f;">Village Type Brown Rice Machine</h3>
+            <button onclick="openPopup('popup23')">VIEW</button>
+        </div>
+        <div class="card">
+            <img src="images\MTPP.png" alt="MOET App">
+            <h3 style=" color: #01303f;">MOET App &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
+            <button onclick="openPopup('popup24')">VIEW</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="popup" id="popup1">
+        <div class="popup-content">
+            <h2>Seed Cleaner</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel1')">&#10094;</button>
+                <div class="carousel-inner" id="carousel1">
+                    <img src="images\SC.png" alt="Image 1">
+                    <img src="images\SC2.png" alt="Image 2">
+                    <img src="images\SC3.png" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide('carousel1')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">mobile cleaner with high capacity of up to 1.5 tons/hour for final cleaning after drying and less than 1% cleaning loss</p>
+            <button class="close-btn" onclick="closePopup('popup1')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup2">
+        <div class="popup-content">
+            <h2>Laboy Tiller</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel2')">&#10094;</button>
+                <div class="carousel-inner" id="carousel2">
+                    <img src="images\LT.png" alt="Image 1">
+                    <img src="images\LT2.png" alt="Image 2">
+                    <img src="images\LT3.png" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide('carousel2')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Intended for puddling the soil with deep harden depth and has a floatation component that keeps the tiller working even on deep mud field</p>
+            <button class="close-btn" onclick="closePopup('popup2')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup3">
+        <div class="popup-content">
+            <h2>Reversible Airflow Flatbed Dryer</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel3')">&#10094;</button>
+                <div class="carousel-inner" id="carousel3">
+                    <img src="images\RAFD.png" alt="Image 1">
+                    <img src="images\RAFD2.png" alt="Image 2">
+                    <img src="images\RAFD3.png" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide('carousel3')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">A batch type mechanical dryer that is used to dry grains by introducing heated air at the bottom layer of the grains and then reversing the flow of the heated air at the later part of drying process</p>
+            <button class="close-btn" onclick="closePopup('popup3')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup4">
+        <div class="popup-content">
+            <h2>Drum Seeder</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel4')">&#10094;</button>
+                <div class="carousel-inner" id="carousel4">
+                    <img src="images\DS.png" alt="Image 1">
+                    <img src="images\DS2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel4')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Save seeds. Can save 50-80% seeds over broadcast seeding. Portable and lightweight. Can be used both for upland and wetland seeding. Easy to operate and maintain. Made of lightweight tubing and polyethylene plastic. Versatile. Can be used for other crops. Convenient. Rice grains seeded in straight rows, allowing mechanical weeding in between rows.</p>
+            <button class="close-btn" onclick="closePopup('popup4')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup5">
+        <div class="popup-content">
+            <h2>Micromill</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel5')">&#10094;</button>
+                <div class="carousel-inner" id="carousel5">
+                    <img src="images\Mmill2.png" alt="Image 1">
+                    <img src="images\Mmill3.png" alt="Image 2">
+                    <img src="images\Mmill4.png" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide('carousel5')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The Micromill is a portable lightweigth machine used ti mill paddy in small quantity</p>
+            <button class="close-btn" onclick="closePopup('popup5')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup6">
+        <div class="popup-content">
+            <h2>Multi-Purpose Seeder</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel6')">&#10094;</button>
+                <div class="carousel-inner" id="carousel6">
+                    <img src="images\MPS2.png" alt="Image 1">
+                    <img src="images\MPS3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel6')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Attachment to local handtractor for mechanical dry direct seeding of un-germinated rice, mungbean, and corn seeds in dry pulverized soil in the furrow created and later close it to protect from birds and rodents.</p>
+            <button class="close-btn" onclick="closePopup('popup6')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup7">
+        <div class="popup-content">
+            <h2>Wind Pump</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel7')">&#10094;</button>
+                <div class="carousel-inner" id="carousel7">
+                    <img src="images\WP2.png" alt="Image 1">
+                    <img src="images\WP3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel7')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Wind pump irrigation system works like a typical wind mill, except that it can be used in drip and micro sprinkler irrigation as well.</p>
+            <button class="close-btn" onclick="closePopup('popup7')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup8">
+        <div class="popup-content">
+            <h2>Rice Husk Gas Stove</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel8')">&#10094;</button>
+                <div class="carousel-inner" id="carousel8">
+                    <img src="images\RHGS2.png" alt="Image 1">
+                    <img src="images\RHGS3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel8')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Rice husk gas stove employs the principle of gasification. Gasification is a process of converting solid fuels, such as rice husk into a useful gas with restricted supply of air. In the rice husk gasifier stove, the rice husk is heated under limited amount of air or in a state of partial combustion that result in the production of gases such as carbon monoxide (CO), hydrogen (H2 ), and methane (CH4 ). These are termed as producer gas, and is combustible. It produces bluish flame when burnt due to the low carbon content of the gas. Char is a by-product of the gasification process.</p>
+            <button class="close-btn" onclick="closePopup('popup8')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup9">
+        <div class="popup-content">
+            <h2>Microtiller</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel9')">&#10094;</button>
+                <div class="carousel-inner" id="carousel9">
+                    <img src="images\MT2.png" alt="Image 1">
+                    <img src="images\MT3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel9')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Portable. Lightweight and can be easily dismantled to facilitate transport in steep terrain Simple design. Utilizes parts that could be easily bought in local stores Efficient. Works well even in fields with knee-deep hard pans and long stubbles Fast. Works at least 24 times faster than the traditional method of foot trampling</p>
+            <button class="close-btn" onclick="closePopup('popup9')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup10">
+        <div class="popup-content">
+            <h2>Flatbed Dryer</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel10')">&#10094;</button>
+                <div class="carousel-inner" id="carousel10">
+                    <img src="images\FD.png" alt="Image 1">
+                    <img src="images\FD2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel10')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The Maligaya Flatbed dryer is a batch-type mechanical dryer that is used to remove the moisture content of the grains down to a safe level for storing and further processing. It uses rice husk as heat source. The Maligaya Flatbed Dryer is used to dry crops such as corn, coffee, legumes, rice, and other plants or products that need to be dried (like banana and cassava chips). It uses rice husks, corn stalks, or coffee husks as fuel to heat the air inside the dryer through a blower. The dryer can be used even during rainy weather or at night.</p>
+            <button class="close-btn" onclick="closePopup('popup10')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup11">
+        <div class="popup-content">
+            <h2>Continuous - Type Rice Hull Carbonizer</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel11')">&#10094;</button>
+                <div class="carousel-inner" id="carousel11">
+                    <img src="images\CTRHC.png" alt="Image 1">
+                </div>
+                <button class="next" onclick="nextSlide('carousel11')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">converts rice husk into carbonized rice husk that can be used for seedbed preparation, organic fertilizer, and soil conditioner. It enables farmers to grow mushrooms economically and in a much easier and convenient way used in poultry raising and roasting chicken</p>
+            <button class="close-btn" onclick="closePopup('popup11')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup12">
+        <div class="popup-content">
+            <h2>Open Type Carbonizer</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel12')">&#10094;</button>
+                <div class="carousel-inner" id="carousel12">
+                    <img src="images\OTC.png" alt="Image 1">
+                </div>
+                <button class="next" onclick="nextSlide('carousel12')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Open-type Carbonizer is a simple, easy-to-use, and low-cost rice hull carbonizer to help resource-challenged farmers produce their own CRH, which can be used as a keyingredient in making organic fertilizer. Features: Lightweight, portable and easy to fabricate Easy to operate and requires less attention Efficient, economical and practically smokeless</p>
+            <button class="close-btn" onclick="closePopup('popup12')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup13">
+        <div class="popup-content">
+            <h2>MultiCrop Flourmill</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel13')">&#10094;</button>
+                <div class="carousel-inner" id="carousel13">
+                    <img src="images\MCF2.png" alt="Image 1">
+                    <img src="images\MCF3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel13')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Produces fine, dry flour for some traditional food and bakery products; Storable output up to six months; Low power requirement; Output free from contamination; Can be used for corn, cassava, ube, squash, banana, mungbean, chili, black pepper, soy bean, etc; Easy to operate and maintain; Easy to fabricate and utilizes local materials; Ability to mill small quantities;</p>
+            <button class="close-btn" onclick="closePopup('popup13')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup14">
+        <div class="popup-content">
+            <h2>Hand Tractor Attachment</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel14')">&#10094;</button>
+                <div class="carousel-inner" id="carousel14">
+                    <img src="images\HTA.png" alt="Image 1">
+                    <img src="images\HTA2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel14')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The HT Attachment is a set of farm implements mounted on a common frame and provided with an operator seat. It can be attached to a hand tractor and used for plowing, harrowing, and harrow-levelling; with a universal hitch for multiple attachments, a pivot mechanism for easy manoeuvring, and with PTO (power take-off) and has a field capacity of 2 ha per day.</p>
+            <button class="close-btn" onclick="closePopup('popup14')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup15">
+        <div class="popup-content">
+            <h2>Saclob</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel15')">&#10094;</button>
+                <div class="carousel-inner" id="carousel15">
+                    <img src="images\SAC2.png" alt="Image 1">
+                    <img src="images\SAC3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel15')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Saclob comes from the Filipino word saklob, which means “cover”. The saclob is a locally-developed airtight container, equipped with a simple sealing mechanism, where bags of rice seeds are placed during storage. Its development started in 2004 owing to an urgent need of the government's Hybrid Rice Commercialization Program for a low cost alternative to an effective but imported hermetic technology used in storing hybrid rice seeds. Results of a three-year study that evaluated the performance of saclob showed that it can preserve the quality of stored seeds much better than the conventional open storage and comparably with its imported counterpart.</p>
+            <button class="close-btn" onclick="closePopup('popup15')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup16">
+        <div class="popup-content">
+            <h2>eDamuhan App</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel16')">&#10094;</button>
+                <div class="carousel-inner" id="carousel16">
+                    <img src="images\EDA2.png" alt="Image 1">
+                    <img src="images\EDA3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel16')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">This app recognizes weed images and gives the descriptions and recommendations on how to control weeds. Farmers can browse its list of Philippine weed species, their scientific and local names, their impact on rice, and their recommended management.</p>
+            <button class="close-btn" onclick="closePopup('popup16')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup17">
+        <div class="popup-content">
+            <h2>Rice Crop Manager Advisory Service</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel17')">&#10094;</button>
+                <div class="carousel-inner" id="carousel17">
+                    <img src="images\RCMAS.png" alt="Image 1">
+                </div>
+                <button class="next" onclick="nextSlide('carousel17')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The Rice Crop Manager Advisory Service (RCMAS) for the Philippines is a digital agriculture service that provides farmers with information geared toward increasing productivity and profitability of rice farming through targeted integrated nutrient and crop management. The nationwide training, dissemination and deployment is being implemented in collaboration with the DA Regional Field Offices (DA-RFOs), Agricultural Training Institute (ATI) with support of its Regional Training Centers (RTCs) and the agricultural extension workers (AEWs) at the local government units (LGUs).</p>
+            <button class="close-btn" onclick="closePopup('popup17')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup18">
+        <div class="popup-content">
+            <h2>Rotary Reaper</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel18')">&#10094;</button>
+                <div class="carousel-inner" id="carousel18">
+                    <img src="images\RR.png" alt="Image 1">
+                    <img src="images\RR2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel18')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">This rice harvesting machinery is almost half the price of imported models. It can be used during both the dry and rainy seasons. Affordable for farmers: The price is 40%-50% lower compared to imported models available in local markets. Suitable for local conditions: It can be used with local varieties and in both wet or dry farming conditions. Low manufacturing and maintenance costs: Since it is made from local parts, it can be repaired and maintained in local workshops.</p>
+            <button class="close-btn" onclick="closePopup('popup18')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup19">
+        <div class="popup-content">
+            <h2>Bamboo-bin dryer</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel19')">&#10094;</button>
+                <div class="carousel-inner" id="carousel19">
+                    <img src="images\BBD.png" alt="Image 1">
+                    <img src="images\BDD2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel19')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The Bamboo-bin Dryer consists of three main parts: 1. the drying bin made of two concentric bamboo mats (the bigger one stores grains; the smaller one, wrapped around a steel bar frame which serves as plenum); 2. the blower, with small electric motor and automotive fan blade which provides the drying air; and 3. the heater, 2-kW resistor coil, which slightly raises the temperature of drying air.</p>
+            <button class="close-btn" onclick="closePopup('popup19')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup20">
+        <div class="popup-content">
+            <h2>Pedal Type Brown Rice Machine</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel20')">&#10094;</button>
+                <div class="carousel-inner" id="carousel20">
+                    <img src="images\PTBRM.png" alt="Image 1">
+                    <img src="images\PTBRMM2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel20')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The Pedal-type brown rice produces healthy brown rice through pedaling like a bike. This requires a one-man peddler to dehull 1-2kg rice in an hour. The pedal-powered brown rice machine features a simple, user- friendly design capable of meeting the daily 1-kilogram brown rice requirement for a family of five. The entire assembly is mounted on a sturdy frame with a seat and pedals, similar to those on a bicycle, making it easy to operate and efficient.</p>
+            <button class="close-btn" onclick="closePopup('popup20')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup21">
+        <div class="popup-content">
+            <h2>Kwebo</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel21')">&#10094;</button>
+                <div class="carousel-inner" id="carousel21">
+                    <img src="images\KWB.png" alt="Image 1">
+                    <img src="images\KWB2.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel21')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Derived from kweba (cave) and kubo (nipa hut) denoting a farm structure that has the strength of a cave with the simple design of a nipa hut low-cost, typhoon-resistant multipurpose storage that can be used as a dwelling place for farm animals and safehouse for equipment</p>
+            <button class="close-btn" onclick="closePopup('popup21')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup22">
+        <div class="popup-content">
+            <h2>LCC app</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel22')">&#10094;</button>
+                <div class="carousel-inner" id="carousel22">
+                    <img src="images\LCCPP2.png" alt="Image 1">
+                    <img src="images\LCCPP3.png" alt="Image 2">
+                    <img src="images\LCCPP4.png" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide('carousel22')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">A real-time leaf Nitrogen assessment smartphone application for precise topdress N-fertilizer recommendations for lowland rice crop Released in 2020 as a free trial version in Google Play Store for android smartphones running on Kitkat OS</p>
+            <button class="close-btn" onclick="closePopup('popup22')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup23">
+        <div class="popup-content">
+            <h2>Village Type Brown Rice Machine</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel23')">&#10094;</button>
+                <div class="carousel-inner" id="carousel23">
+                    <img src="images\VTBRM2.png" alt="Image 1">
+                    <img src="images\VTBRM3.png" alt="Image 2">
+                    <img src="images\VTBRM4.png" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide('carousel23')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">The Brown Rice Machine is a technology developed by the Rice Engineering and Mechanization Division (REMD) to make brown rice by removing just the grain husks while keeping the bran layers intact. This technology addresses the high cost of brown rice, thus supporting consumers' demand for natural and healthy meals. The village-type BRM was fabricated at the PhilRice REMD workshop</p>
+            <button class="close-btn" onclick="closePopup('popup23')">Close</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup24">
+        <div class="popup-content">
+            <h2>MOET App</h2>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide('carousel24')">&#10094;</button>
+                <div class="carousel-inner" id="carousel24">
+                    <img src="images\MTPP2.png" alt="Image 1">
+                    <img src="images\MTPP3.png" alt="Image 2">
+                </div>
+                <button class="next" onclick="nextSlide('carousel24')">&#10095;</button>
+            </div>
+            <p style="text-align: justify;">Complementary device for the MOET kit provides the right amount, combination, and type of fertilizer to be applied through a soil nutrient calculator</p>
+            <button class="close-btn" onclick="closePopup('popup24')">Close</button>
+        </div>
+    </div>
+
+<script>
+     function toggleMenu() {
+        const menu = document.querySelector('.navbar .menu');
+        menu.classList.toggle('active');
+     }
+
+    function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'flex';
+            document.body.classList.add('modal-open');
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const totalSlides = carousel.children.length;
+            let currentIndex = parseInt(carousel.getAttribute('data-current-index'), 10) || 0;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            carousel.setAttribute('data-current-index', currentIndex);
+            carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const totalSlides = carousel.children.length;
+            let currentIndex = parseInt(carousel.getAttribute('data-current-index'), 10) || 0;
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            carousel.setAttribute('data-current-index', currentIndex);
+            carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+        
+        function openTab(event, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            const tabButtons = document.querySelectorAll('.tabs button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function showTab(event, tabId) {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            document.getElementById(tabId).classList.add('active');
+            var defaultImage = document.getElementById('defaultImage');
+            defaultImage.classList.remove('active');
+            const tabButtons = document.querySelectorAll('.tabs button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+</script>
+
+</body>
+</html>
