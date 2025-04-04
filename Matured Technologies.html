@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matured Technologies</title>
+    <title>Mature Technologies</title>
     <link rel="icon" href="images/TECHNO ASSESMENT LOGO.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
@@ -301,6 +301,17 @@
         body.modal-open {
             overflow: hidden;
         }
+        .popup table, th, td {
+            border: 1px solid #ddd;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -313,12 +324,12 @@
             <a style="font-size: 20px;" href="index.html">HOME</a>
             <a style="font-size: 20px;" href="Developed Technologies.html">DEVELOPED TECHNOLOGIES</a>
             <a style="font-size: 20px;" href="Emerging Technologies.html">EMERGING TECHNOLOGIES</a>
-            <a style="font-size: 20px; border-bottom: 5px solid #363636;" href="Matured Technologies.html">MATURED TECHNOLOGIES</a>
+            <a style="font-size: 20px; border-bottom: 5px solid #363636;" href="Matured Technologies.html">MATURE TECHNOLOGIES</a>
         </nav>
     <div class="popup-background" id="popup-background"></div>
         <div class="gradient-line-a"></div>
         <div class="header">
-            Matured Technologies
+            Mature Technologies
         </div>
 <div class="gradient-line-b"></div>
 <div class="tabs">
@@ -380,7 +391,7 @@
         </div>
         <div class="card">
             <img src="images\OTC.png" alt="Open Type Carbonizer">
-            <h3 style=" color: #01303f;">Open - Type Rice Hull Carbonizer</h3>
+            <h3 style=" color: #01303f;">Open-type Rice Hull Carbonizer</h3>
             <button onclick="openPopup('popup12')">VIEW</button>
         </div>
         <div class="card">
@@ -409,8 +420,8 @@
             <button onclick="openPopup('popup18')">VIEW</button>
         </div>
         <div class="card">
-            <img src="images\CTRHC.png" alt="Continuous - Type Rice Hull Carbonizer">
-            <h3 style=" color: #01303f; font-size:large;">Continuous - Type Rice Hull Carbonizer</h3>
+            <img src="images\CTRHC.png" alt="Continuous-type Rice Hull Carbonizer">
+            <h3 style=" color: #01303f; font-size:large;">Continuous-type Rice Hull Carbonizer</h3>
             <button onclick="openPopup('popup11')">VIEW</button>
         </div>
     </div>
@@ -428,8 +439,8 @@
             <button onclick="openPopup('popup22')">VIEW</button>
         </div>
         <div class="card">
-            <img src="images\VTBRM.png" alt="Village Type Brown Rice Machine">
-            <h3 style=" color: #01303f;">Village Type Brown Rice Machine</h3>
+            <img src="images\VTBRM.png" alt="Village-type Brown Rice Machine">
+            <h3 style=" color: #01303f;">Village-type Brown Rice Machine</h3>
             <button onclick="openPopup('popup23')">VIEW</button>
         </div>
         <div class="card">
@@ -440,7 +451,7 @@
     </div>
     </div>
 
-    <div class="popup" id="popup1">
+        <div class="popup" id="popup1">
         <div class="popup-content">
             <h2>Seed Cleaner</h2>
             <div class="carousel">
@@ -448,11 +459,42 @@
                 <div class="carousel-inner" id="carousel1">
                     <img src="images\SC.png" alt="Image 1">
                     <img src="images\SC2.png" alt="Image 2">
-                    <img src="images\SC3.png" alt="Image 3">
                 </div>
                 <button class="next" onclick="nextSlide('carousel1')">&#10095;</button>
             </div>
             <p style="text-align: justify;">mobile cleaner with high capacity of up to 1.5 tons/hour for final cleaning after drying and less than 1% cleaning loss</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                  <td style="text-align: left;">Output Capacity</td>
+                  <td>250 cav/day</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Paddy purity</td>
+                  <td>49-99% depending on paddy MC</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Cleaning Losses</td>
+                  <td>&lt;1%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Labor requirement</td>
+                  <td>1-2 person</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Power requirement</td>
+                  <td>1.5hp electric motor or 6hp gasoline engine</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Weight</td>
+                  <td>80 kg</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Dimension (L x W x H)</td>
+                  <td>1.2 x 0.6 x 1.0m</td>
+                </tr>
+              </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup1')">Close</button>
         </div>
     </div>
@@ -466,14 +508,58 @@
                     <img src="images\LT.png" alt="Image 1">
                     <img src="images\LT2.png" alt="Image 2">
                     <img src="images\LT3.png" alt="Image 3">
+
                 </div>
                 <button class="next" onclick="nextSlide('carousel2')">&#10095;</button>
             </div>
             <p style="text-align: justify;">Intended for puddling the soil with deep harden depth and has a floatation component that keeps the tiller working even on deep mud field</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                  <td style="text-align: left;">Power requirement</td>
+                  <td>7.5hp gasoline engine</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Fuel consumption</td>
+                  <td>1 li/day</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Field Capacity</td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>1st pass</td>
+                        <td>1.0 ha/day</td>
+                      </tr>
+                      <tr>
+                        <td>2nd pass</td>
+                        <td>1.5 ha/day</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Labor requirements</td>
+                  <td>1-2 persons</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Weight</td>
+                  <td>100kg</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Width</td>
+                  <td>1.1m</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Dimension (L x W x H)</td>
+                  <td>1.75 x 1.20 x .80m</td>
+                </tr>
+              </table>
+            <br>              
             <button class="close-btn" onclick="closePopup('popup2')">Close</button>
         </div>
     </div>
-
+    
     <div class="popup" id="popup3">
         <div class="popup-content">
             <h2>Reversible Airflow Flatbed Dryer</h2>
@@ -482,11 +568,38 @@
                 <div class="carousel-inner" id="carousel3">
                     <img src="images\RAFD.png" alt="Image 1">
                     <img src="images\RAFD2.png" alt="Image 2">
-                    <img src="images\RAFD3.png" alt="Image 3">
                 </div>
                 <button class="next" onclick="nextSlide('carousel3')">&#10095;</button>
             </div>
             <p style="text-align: justify;">A batch type mechanical dryer that is used to dry grains by introducing heated air at the bottom layer of the grains and then reversing the flow of the heated air at the later part of drying process</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                  <td style="text-align: left;">Drying Bin</td>
+                  <td>60-220 cavan/batch</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Drying Time</td>
+                  <td>4-6 hr/batch (14% MC)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Drying Temperature</td>
+                  <td>43-60 °C</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Fan</td>
+                  <td>Single to two-stage tube-axial</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Furnace</td>
+                  <td>25-60 kg/hr rice hull fueled</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Prime Mover</td>
+                  <td>26 hp Diesel engine</td>
+                </tr>
+              </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup3')">Close</button>
         </div>
     </div>
@@ -499,6 +612,7 @@
                 <div class="carousel-inner" id="carousel4">
                     <img src="images\DS.png" alt="Image 1">
                     <img src="images\DS2.png" alt="Image 2">
+                    <img src="images\DS3.png" alt="Image 3">
                 </div>
                 <button class="next" onclick="nextSlide('carousel4')">&#10095;</button>
             </div>
@@ -515,11 +629,26 @@
                 <div class="carousel-inner" id="carousel5">
                     <img src="images\Mmill2.png" alt="Image 1">
                     <img src="images\Mmill3.png" alt="Image 2">
-                    <img src="images\Mmill4.png" alt="Image 3">
                 </div>
                 <button class="next" onclick="nextSlide('carousel5')">&#10095;</button>
             </div>
             <p style="text-align: justify;">The Micromill is a portable lightweigth machine used ti mill paddy in small quantity</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                  <td style="text-align: left;">Input capacity</td>
+                  <td>50-75 kg/hr</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Power Requiremnt</td>
+                  <td>6 hp gasoline engine</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Energy Consumption</td>
+                  <td>1 L/hr</td>
+                </tr>
+              </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup5')">Close</button>
         </div>
     </div>
@@ -568,6 +697,34 @@
                 <button class="next" onclick="nextSlide('carousel8')">&#10095;</button>
             </div>
             <p style="text-align: justify;">Rice husk gas stove employs the principle of gasification. Gasification is a process of converting solid fuels, such as rice husk into a useful gas with restricted supply of air. In the rice husk gasifier stove, the rice husk is heated under limited amount of air or in a state of partial combustion that result in the production of gases such as carbon monoxide (CO), hydrogen (H2 ), and methane (CH4 ). These are termed as producer gas, and is combustible. It produces bluish flame when burnt due to the low carbon content of the gas. Char is a by-product of the gasification process.</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                  <td style="text-align: left;">Start-up time</td>
+                  <td>1.0 min</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Operating time</td>
+                  <td>27 - 30 min/load</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Rice husk consumption rate</td>
+                  <td>0.8 kg/load</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Power output</td>
+                  <td>3.1 - 4.7 kWt</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Overall dimension (L x W x H)</td>
+                  <td>30 x 30 x 80 cm</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Time to boil water</td>
+                  <td>8.5 - 11 min for 2L of water</td>
+                </tr>
+              </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup8')">Close</button>
         </div>
     </div>
@@ -578,28 +735,74 @@
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel9')">&#10094;</button>
                 <div class="carousel-inner" id="carousel9">
-                    <img src="images\MT2.png" alt="Image 1">
-                    <img src="images\MT3.png" alt="Image 2">
+                    <img src="images\MT3.png" alt="Image 1">
                 </div>
                 <button class="next" onclick="nextSlide('carousel9')">&#10095;</button>
             </div>
             <p style="text-align: justify;">Portable. Lightweight and can be easily dismantled to facilitate transport in steep terrain Simple design. Utilizes parts that could be easily bought in local stores Efficient. Works well even in fields with knee-deep hard pans and long stubbles Fast. Works at least 24 times faster than the traditional method of foot trampling</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                    <td style="text-align: left;">Field capacity</td>
+                    <td>0.5 ha/day</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Labor requirement</td>
+                    <td>1 person</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Width of cut</td>
+                    <td>0.6 m</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Power requirement</td>
+                    <td>6 hp gasoline</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Weight</td>
+                    <td>60 kg</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Dimension (L x W x H)</td>
+                    <td>1.5 x 0.7 x 0.7 m</td>
+                  </tr>
+                </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup9')">Close</button>
         </div>
     </div>
 
     <div class="popup" id="popup10">
         <div class="popup-content">
-            <h2>Flatbed Dryer</h2>
+            <h2> Maligaya Flatbed Dryer</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel10')">&#10094;</button>
                 <div class="carousel-inner" id="carousel10">
                     <img src="images\FD.png" alt="Image 1">
-                    <img src="images\FD2.png" alt="Image 2">
                 </div>
                 <button class="next" onclick="nextSlide('carousel10')">&#10095;</button>
             </div>
             <p style="text-align: justify;">The Maligaya Flatbed dryer is a batch-type mechanical dryer that is used to remove the moisture content of the grains down to a safe level for storing and further processing. It uses rice husk as heat source. The Maligaya Flatbed Dryer is used to dry crops such as corn, coffee, legumes, rice, and other plants or products that need to be dried (like banana and cassava chips). It uses rice husks, corn stalks, or coffee husks as fuel to heat the air inside the dryer through a blower. The dryer can be used even during rainy weather or at night.</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                    <td style="text-align: left;">Capacity</td>
+                    <td>120 cav/batch</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Power requirement</td>
+                    <td>12 hp diesel or 10 hp electric motor</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Drying Temperature</td>
+                    <td>43 to 60°C </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">Rice Husk Consumption</td>
+                    <td>30 - 40 kg rice husk (furnace)</td>
+                  </tr>
+                </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup10')">Close</button>
         </div>
     </div>
@@ -611,6 +814,8 @@
                 <button class="prev" onclick="prevSlide('carousel11')">&#10094;</button>
                 <div class="carousel-inner" id="carousel11">
                     <img src="images\CTRHC.png" alt="Image 1">
+                    <img src="images\CTRHC1.png" alt="Image 2">
+                    <img src="images\CTRHC2.png" alt="Image 3">
                 </div>
                 <button class="next" onclick="nextSlide('carousel11')">&#10095;</button>
             </div>
@@ -641,11 +846,49 @@
                 <button class="prev" onclick="prevSlide('carousel13')">&#10094;</button>
                 <div class="carousel-inner" id="carousel13">
                     <img src="images\MCF2.png" alt="Image 1">
-                    <img src="images\MCF3.png" alt="Image 2">
                 </div>
                 <button class="next" onclick="nextSlide('carousel13')">&#10095;</button>
             </div>
             <p style="text-align: justify;">Produces fine, dry flour for some traditional food and bakery products; Storable output up to six months; Low power requirement; Output free from contamination; Can be used for corn, cassava, ube, squash, banana, mungbean, chili, black pepper, soy bean, etc; Easy to operate and maintain; Easy to fabricate and utilizes local materials; Ability to mill small quantities;</p>
+            <h2 style="text-align: center;">General Specification</h2>
+            <table>
+                <tr>
+                  <th></th>
+                  <th>Household Model</th>
+                  <th>Village Model</th>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Power Requirement</td>
+                  <td>1.5 kw motor</td>
+                  <td>7.5 kw motor</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Capacity</td>
+                  <td>10 kg</td>
+                  <td>100 kg</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Milling Recovery</td>
+                  <td>98%</td>
+                  <td>98%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Labor Requirement</td>
+                  <td>1 person</td>
+                  <td>1 person</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Flour fineness</td>
+                  <td>mesh # 80 - 100</td>
+                  <td>mesh # 80 - 100</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left;">Machine Weight</td>
+                  <td>40 kg</td>
+                  <td>100 kg</td>
+                </tr>
+              </table>
+              <br>
             <button class="close-btn" onclick="closePopup('popup13')">Close</button>
         </div>
     </div>
@@ -747,7 +990,7 @@
 
     <div class="popup" id="popup20">
         <div class="popup-content">
-            <h2>Pedal Type Brown Rice Machine</h2>
+            <h2>Pedal-type Brown Rice Machine</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel20')">&#10094;</button>
                 <div class="carousel-inner" id="carousel20">
@@ -796,17 +1039,63 @@
 
     <div class="popup" id="popup23">
         <div class="popup-content">
-            <h2>Village Type Brown Rice Machine</h2>
+            <h2>Village-type Brown Rice Machine</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel23')">&#10094;</button>
                 <div class="carousel-inner" id="carousel23">
                     <img src="images\VTBRM2.png" alt="Image 1">
                     <img src="images\VTBRM3.png" alt="Image 2">
                     <img src="images\VTBRM4.png" alt="Image 3">
+
                 </div>
                 <button class="next" onclick="nextSlide('carousel23')">&#10095;</button>
             </div>
             <p style="text-align: justify;">The Brown Rice Machine is a technology developed by the Rice Engineering and Mechanization Division (REMD) to make brown rice by removing just the grain husks while keeping the bran layers intact. This technology addresses the high cost of brown rice, thus supporting consumers' demand for natural and healthy meals. The village-type BRM was fabricated at the PhilRice REMD workshop</p>
+            <h2 style="text-align: center;">General Specification</h2>
+<table>
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left;">Dehulling Unit</td>
+      <td>8" diameter</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Output capacity, kg/h</td>
+      <td>115-331</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">BR Recovery, %</td>
+      <td>71-77%</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Purity of product</td>
+      <td>98.5%</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Power Requirement</td>
+      <td>5 hp (Dehuller)
+        <br>
+        220 V single-phase electric motor</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Paddy separator</td>
+      <td>Tray type; 2 layers</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Overall dimensions (L x W x H)</td>
+      <td>BRM; 1.760m x 1.700m x 2.950m
+        <br>
+        Cyclone: 1.500m x 1.500m x 2.550m
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Labor Requirements</td>
+      <td>2 persons: 1 operator, 1 bagger</td>
+    </tr>
+  </tbody>
+</table>
+<br>
             <button class="close-btn" onclick="closePopup('popup23')">Close</button>
         </div>
     </div>
