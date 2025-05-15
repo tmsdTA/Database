@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA - Technology Database</title>
+    <link rel="icon" href="images\TECHNO ASSESMENT LOGO.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+         }
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(2, 87, 122, 0.9);
+            padding: 5px 10px;
+            position: sticky;
+            top: 0;
+            font-family: "Anton", serif;
+        } 
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 80px;
+            width: auto;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .navbar .menu a:hover {
+            background-color: #575757;
+        }
+        .navbar-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .navbar .logo {
+                width: 100%;
+                justify-content: center;
+            }
+            .navbar .logo img {
+                height: 80px;
+            }
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar .menu a {
+                padding: 10px;
+                text-align: center;
+                border-top: 1px solid #575757;
+            }
+            .navbar-toggle {
+                display: inline-block;
+                margin-left: auto;
+            }
+            .navbar .menu.active {
+                display: flex;
+            }
+        }
+        @media (max-width: 1200px) {
+            .header {
+                font-size: 6vw; 
+            }
+        }
+        @media (max-width: 768px) {
+            .header {
+                font-size: 8vw; 
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                font-size: 10vw;
+            }    
+        }
+        .gradient-line { 
+            height: 5px; 
+            background: linear-gradient(to right, #02577a, #fff); 
+            border: none; 
+            margin: 5px 0; }
+
+        .header {
+            background-image: url('./images/header gif.gif');
+            background-size: cover;
+            background-position: center;
+            color: rgb(29, 26, 26);
+            text-align: center;
+            padding: 50px 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }    
+        .card {
+            width: 400px;
+            border: 1px solid #02577a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: white;
+            font-size: 20px;
+        }
+        .card button {
+            background-color: #02577a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        } 
+        .card button:hover {
+            background-color: #02a9f7;
+        } 
+        .card h2 {
+            font-size: calc(1.6em + 1vw);
+            margin: 10px 0;
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+        .card p {
+            font-size: calc(.8em + 0.5vw);
+            margin: 10px 0;
+            color: #575757;
+            text-align: left;
+            
+        }
+        .counter {
+            font-size: 2em;
+            margin: 10px 0;
+            color:#01303f;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 200px; 
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+        .search-container {
+            position: relative;
+            width: 300px;
+            padding: 5px 10px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: "Anton", serif;
+        }
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #575757;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+        }
+        .dropdown-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body> 
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images\PhilRice x TA white.svg" alt="Logo"></a>
+            <div class="navbar-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <div class="menu">
+            <a style="font-size: 20px; border-bottom: 5px solid #363636;" href="index.html">HOME</a>
+            <a style="font-size: 20px;" href="Developed Technologies.html">DEVELOPED TECHNOLOGIES</a>
+            <a style="font-size: 20px;" href="Emerging Technologies.html">EMERGING TECHNOLOGIES</a>
+            <a style="font-size: 20px;" href="Matured Technologies.html">MATURE TECHNOLOGIES</a>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search a technology">
+                <div class="dropdown" id="dropdown"></div>
+        </nav>
+    </div>
+ <br>
+    <div class="header">
+        <h1 style="font-size: 30px; text-align: center; font-weight: bold" >&emsp;</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="counter" id="counter1" style="font-size: 200px;">0</div>
+            <h2>Developed Technologies</h2>
+            <p>Innovative process, product and decision/support tools to enhance rice production.</p>
+            <button onclick="location.href='Developed Technologies.html'">VIEW</button>
+        </div>
+        <div class="card">
+            <div class="counter" id="counter2" style="font-size: 200px;">0</div>
+            <h2>Emerging Technologies</h2>
+            <p>Technologies that are subjected to Technology Assessment. &emsp;&emsp;&emsp;&emsp;&emsp;</p>
+            <button onclick="location.href='Emerging Technologies.html'">VIEW</button>
+        </div>
+        <div class="card">
+            <div class="counter" id="counter3" style="font-size: 200px;">0</div>
+            <h2>Mature Technologies</h2>
+            <p>Technologies that are ready for promotion and commercialization. &emsp;&emsp;&emsp;&emsp;</p>
+            <button onclick="location.href='Matured Technologies.html'">VIEW</button>
+        </div>
+    
+    <script>
+        function toggleMenu() {
+        const menu = document.querySelector('.navbar .menu');
+        menu.classList.toggle('active');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = [
+                { element: document.getElementById('counter1'), count: 0, maxCount: 50 },
+                { element: document.getElementById('counter2'), count: 0, maxCount: 11 },
+                { element: document.getElementById('counter3'), count: 0, maxCount: 25 }
+            ];
+
+            counters.forEach(counter => {
+                const interval = setInterval(() => {
+                    if (counter.count < counter.maxCount) {
+                        counter.count++;
+                        counter.element.textContent = counter.count;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 70);
+            });
+        });
+        const searchInput = document.getElementById('searchInput');
+        const dropdown = document.getElementById('dropdown');
+        const pages = [
+            { name: 'POT for Drip Irrigated Aerobic Rice (Process)', url: 'Developed Technologies.html' },
+            { name: 'POT on BMP for rainfed environment (Process)', url: 'Developed Technologies.html' },
+            { name: 'Package of technologies (POT) on Modernized Rice Production Technologies For Irrigated Lowland Ecosystem (Process)', url: 'Developed Technologies.html' },
+            { name: 'Stabilized brown rice (Process)', url: 'Developed Technologies.html' },
+            { name: 'Process of producing mushrooms using rice straw and farm biomass combinations added with nutrient supplements (Process)', url: 'Developed Technologies.html' },
+            { name: 'Commercial uses of spent mushroom substrate (Process)', url: 'Developed Technologies.html' },
+            { name: 'OBNM for OBRice Production Management (Process)', url: 'Developed Technologies.html' },
+            { name: 'Calibration models for non-destructive NIR-based determination of moisture content, crude protein content, amylose content, and gelatinization temperature of milled rice and rice flour samples (Process)', url: 'Developed Technologies.html' },
+            { name: 'Capillary Irrigation System (Process)', url: 'Developed Technologies.html' },
+            { name: 'Axial-flow Thresher (Product)', url: 'Developed Technologies.html' },
+            { name: 'Riding-type Boat Tiller (Product)', url: 'Developed Technologies.html' },
+            { name: 'Portable-type Brown Rice Machine (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice Hull Gasifier Engine-Pump System (Product)', url: 'Developed Technologies.html' },
+            { name: 'Pedal-type Brown Rice Machine (Product)', url: 'Developed Technologies.html' },
+            { name: 'Bamboo-bin Dryer (Product)', url: 'Developed Technologies.html' },
+            { name: 'Combined Conduction and Far Infrared Radiation Paddy Dryer (Product)', url: 'Developed Technologies.html' },
+            { name: 'Localized Mushroom Substrate Bagger (Product)', url: 'Developed Technologies.html' },
+            { name: 'PhilRice Cabinet-type Mushroom Solar Dryer (Product)', url: 'Developed Technologies.html' },
+            { name: 'Localized Rice Straw Baler (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice wine lees flour (Product)', url: 'Developed Technologies.html' },
+            { name: 'Vegetable-fortified rice cookies (Product)', url: 'Developed Technologies.html' },
+            { name: 'Aquaculture feed ingredient from blue -green algae (BGA) (Product)', url: 'Developed Technologies.html' },
+            { name: 'Red Mold Rice Cookie(Product)', url: 'Developed Technologies.html' },
+            { name: 'Pandesal with Chilli Leaves (Product)', url: 'Developed Technologies.html' },
+            { name: 'Nano-encapsulated Anthocyanin Extract (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice-Adlai Energy Bar (Product)', url: 'Developed Technologies.html' },
+            { name: 'Low Protein Rice (Product)', url: 'Developed Technologies.html' },
+            { name: 'Instant GABA Rice Congee (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice Bran Noodles (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice-taro crinkle premix (Product)', url: 'Developed Technologies.html' },
+            { name: 'Frozen dough ball with rice ice cream (Product)', url: 'Developed Technologies.html' },
+            { name: 'Ready-to-Eat Gamma Amino Butyric Acid (GABA) Rice Meal; A Nutritious Calamity Food (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice Malt and Soy Beverage (Product)', url: 'Developed Technologies.html' },
+            { name: 'Brown Rice Cracker Ice Cream Sandwich (BRICS) (Product)', url: 'Developed Technologies.html' },
+            { name: 'Instant Enriched Am (Product)', url: 'Developed Technologies.html' },
+            { name: 'Black Rice Bran Juice (Product)', url: 'Developed Technologies.html' },
+            { name: 'Vegetable-fortified rice-fish crackers (Product)', url: 'Developed Technologies.html' },
+            { name: 'Biofertilizer from BGA (Product)', url: 'Developed Technologies.html' },
+            { name: 'Red Mold Rice Diet Supplement (Product)', url: 'Developed Technologies.html' },
+            { name: 'Complementary Food (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice Brew (Product)', url: 'Developed Technologies.html' },
+            { name: 'Rice Bran Biscuit (Product)', url: 'Developed Technologies.html' },
+            { name: 'PalayStat Website', url: 'Developed Technologies.html' },
+            { name: 'WIDGEN', url: 'Developed Technologies.html' },
+            { name: 'DataBro', url: 'Developed Technologies.html' },
+            { name: 'Oryza GEMS', url: 'Developed Technologies.html' },
+            { name: 'AutoMonPH Web App', url: 'Developed Technologies.html' },
+            { name: 'Rice ICT-Based Sensory System', url: 'Developed Technologies.html' },
+            { name: 'Rice Grain Dimensions Measuring App', url: 'Developed Technologies.html' },
+            { name: 'Grain Quality- Rice Information System', url: 'Developed Technologies.html' },
+            { name: 'Carabaos Milk with Fermented Rice Bran', url: 'Emerging Technologies.html' },
+            { name: 'Varietal Mixture (Varmix)', url: 'Emerging Technologies.html' },
+            { name: 'Riding-type Paddy Seeder', url: 'Emerging Technologies.html' },
+            { name: 'MultiCrop Reduced Till Planter', url: 'Emerging Technologies.html' },
+            { name: 'Mini Combine Harvester', url: 'Emerging Technologies.html' },
+            { name: 'Local Mechanized Weeder', url: 'Emerging Technologies.html' },
+            { name: '6D Brown Rice Machine', url: 'Emerging Technologies.html' },
+            { name: 'Heirloom Thresher (Hold-on Type)', url: 'Emerging Technologies.html' },
+            { name: 'Improved Nutri Rice Milk', url: 'Emerging Technologies.html' },
+            { name: 'Improved Rice wine (Tapuy)', url: 'Emerging Technologies.html' },
+            { name: 'eDamuhan App Version 3', url: 'Emerging Technologies.html' },
+            { name: 'Seed Cleaner', url: 'Matured Technologies.html' },
+            { name: 'Laboy Tiller', url: 'Matured Technologies.html' },
+            { name: 'Reversible Airflow Flatbed Dryer', url: 'Matured Technologies.html' },
+            { name: 'Drum Seeder', url: 'Matured Technologies.html' },
+            { name: 'Micromill', url: 'Matured Technologies.html' },
+            { name: 'Multi-Purpose Seeder', url: 'Matured Technologies.html' },
+            { name: 'Wind Pump', url: 'Matured Technologies.html' },
+            { name: 'Rice Husk Gas Stove', url: 'Matured Technologies.html' },
+            { name: 'Microtiller', url: 'Matured Technologies.html' },
+            { name: 'Maligaya Flatbed Dryer', url: 'Matured Technologies.html' },
+            { name: 'Open-type Rice Hull Carbonizer', url: 'Matured Technologies.html' },
+            { name: 'MultiCrop Flourmill', url: 'Matured Technologies.html' },
+            { name: 'Hand Tractor Attachment', url: 'Matured Technologies.html' },
+            { name: 'Saclob', url: 'Matured Technologies.html' },
+            { name: 'Rotary Reaper', url: 'Matured Technologies.html' },
+            { name: 'Continuous-type Rice Hull Carbonizer', url: 'Matured Technologies.html' },
+            { name: 'Maligaya Rice Hull Stove', url: 'Matured Technologies.html' },
+            { name: 'Alternate Wetting and Drying (AWD) Technology', url: 'Matured Technologies.html' },
+            { name: 'Minus One Element Technique (MOET)', url: 'Matured Technologies.html' },
+            { name: 'PhilRice Leaf Color Chart (LCC)', url: 'Matured Technologies.html' },
+            { name: 'PhilRice Modified Rototiller', url: 'Matured Technologies.html' },
+            { name: 'Kwebo', url: 'Matured Technologies.html' },
+            { name: 'LCC app', url: 'Matured Technologies.html' },
+            { name: 'Village-type Brown Rice Machine', url: 'Matured Technologies.html' },
+            { name: 'MOET App', url: 'Matured Technologies.html' },
+
+       
+
+
+        ];
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            dropdown.innerHTML = '';
+            if (query) {
+                const results = pages.filter(page => page.name.toLowerCase().includes(query));
+                results.forEach(page => {
+                    const item = document.createElement('div');
+                    item.className = 'dropdown-item';
+                    item.textContent = page.name;
+                    item.addEventListener('click', function() {
+                        window.location.href = page.url;
+                    });
+                    dropdown.appendChild(item);
+                });
+                dropdown.style.display = results.length ? 'block' : 'none';
+            } else {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!searchInput.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
