@@ -254,6 +254,7 @@
             max-height: 80%;
             overflow-y: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
         .carousel {
             position: relative;
@@ -311,6 +312,23 @@
         }
         th {
             background-color: #f2f2f2;
+        }
+            .close-button {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #575757;
+            padding: 0 5px;
+            position: absolute;
+            top: 10px;       
+            right: 10px;      
+            cursor: pointer;
+            line-height: 1;
+            z-index: 1001;
+        }
+             .close-button:hover {
+            color: black;
         }
     </style>
 </head>
@@ -473,6 +491,7 @@
 
         <div class="popup" id="popup1">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup1')">&times;</button>
             <h2>Seed Cleaner</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel1')">&#10094;</button>
@@ -521,6 +540,7 @@
 
     <div class="popup" id="popup2">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup2')">&times;</button>
             <h2>Laboy Tiller</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel2')">&#10094;</button>
@@ -581,6 +601,7 @@
     
     <div class="popup" id="popup3">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup3')">&times;</button>
             <h2>Reversible Airflow Flatbed Dryer</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel3')">&#10094;</button>
@@ -626,6 +647,7 @@
 
     <div class="popup" id="popup4">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup4')">&times;</button>
             <h2>Drum Seeder</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel4')">&#10094;</button>
@@ -643,6 +665,7 @@
 
     <div class="popup" id="popup5">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup5')">&times;</button>
             <h2>Micromill</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel5')">&#10094;</button>
@@ -676,6 +699,7 @@
 
     <div class="popup" id="popup6">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup6')">&times;</button>
             <h2>Multi-Purpose Seeder</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel6')">&#10094;</button>
@@ -692,6 +716,7 @@
 
     <div class="popup" id="popup7">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup7')">&times;</button>
             <h2>Wind Pump</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel7')">&#10094;</button>
@@ -708,6 +733,7 @@
 
     <div class="popup" id="popup8">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup8')">&times;</button>
             <h2>Rice Husk Gas Stove</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel8')">&#10094;</button>
@@ -752,6 +778,7 @@
 
     <div class="popup" id="popup9">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup9')">&times;</button>
             <h2>Microtiller</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel9')">&#10094;</button>
@@ -797,6 +824,7 @@
 
     <div class="popup" id="popup10">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup10')">&times;</button>
             <h2> Maligaya Flatbed Dryer</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel10')">&#10094;</button>
@@ -832,6 +860,7 @@
 
     <div class="popup" id="popup11">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup11')">&times;</button>
             <h2>Continuous - Type Rice Hull Carbonizer</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel11')">&#10094;</button>
@@ -849,6 +878,7 @@
 
     <div class="popup" id="popup12">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup12')">&times;</button>
             <h2>Open Type Carbonizer</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel12')">&#10094;</button>
@@ -864,6 +894,7 @@
 
     <div class="popup" id="popup13">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup13')">&times;</button>
             <h2>MultiCrop Flourmill</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel13')">&#10094;</button>
@@ -918,6 +949,7 @@
 
     <div class="popup" id="popup14">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup14')">&times;</button>
             <h2>Hand Tractor Attachment</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel14')">&#10094;</button>
@@ -935,6 +967,7 @@
 
     <div class="popup" id="popup15">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup15')">&times;</button>
             <h2>Saclob</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel15')">&#10094;</button>
@@ -951,6 +984,7 @@
 
     <div class="popup" id="popup17">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup17')">&times;</button>
             <h2>Rice Crop Manager Advisory Service</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel17')">&#10094;</button>
@@ -966,6 +1000,7 @@
 
     <div class="popup" id="popup18">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup18')">&times;</button>
             <h2>Rotary Reaper</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel18')">&#10094;</button>
@@ -982,6 +1017,7 @@
 
     <div class="popup" id="popup19">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup19')">&times;</button>
             <h2>Bamboo-bin dryer</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel19')">&#10094;</button>
@@ -998,6 +1034,7 @@
 
     <div class="popup" id="popup20">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup29')">&times;</button>
             <h2>Pedal-type Brown Rice Machine</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel20')">&#10094;</button>
@@ -1014,6 +1051,7 @@
 
     <div class="popup" id="popup21">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup21')">&times;</button>
             <h2>Kwebo</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel21')">&#10094;</button>
@@ -1031,6 +1069,7 @@
 
     <div class="popup" id="popup22">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup22')">&times;</button>
             <h2>LCC app</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel22')">&#10094;</button>
@@ -1048,6 +1087,7 @@
 
     <div class="popup" id="popup23">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup23')">&times;</button>
             <h2>Village-type Brown Rice Machine</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel23')">&#10094;</button>
@@ -1112,6 +1152,7 @@
 
     <div class="popup" id="popup24">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup24')">&times;</button>
             <h2>MOET App</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel24')">&#10094;</button>
@@ -1128,6 +1169,7 @@
 
     <div class="popup" id="popup25">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup25')">&times;</button>
             <h2>Maligaya Rice Hull Stove</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel25')">&#10094;</button>
@@ -1144,6 +1186,7 @@
 
     <div class="popup" id="popup26">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup26')">&times;</button>
             <h2>Alternate Wetting and Drying (AWD) Technology</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel26')">&#10094;</button>
@@ -1161,6 +1204,7 @@
 
     <div class="popup" id="popup27">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup27')">&times;</button>
             <h2>Minus One Element Technique (MOET)</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel27')">&#10094;</button>
@@ -1177,6 +1221,7 @@
 
     <div class="popup" id="popup28">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup28')">&times;</button>
             <h2>PhilRice Leaf Color Chart (LCC)</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel28')">&#10094;</button>
@@ -1193,6 +1238,7 @@
 
     <div class="popup" id="popup29">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup29')">&times;</button>
             <h2>PhilRice Modified Rototiller</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel29')">&#10094;</button>
