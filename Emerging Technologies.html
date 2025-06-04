@@ -209,6 +209,7 @@
             max-height: 80%;
             overflow-y: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
         .carousel {
             position: relative;
@@ -266,6 +267,23 @@
         }
         th {
             background-color: #f2f2f2;
+        }
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #575757;
+            padding: 0 5px;
+            position: absolute;
+            top: 10px;       
+            right: 10px;      
+            cursor: pointer;
+            line-height: 1;
+            z-index: 1001;
+        }
+             .close-button:hover {
+            color: black;
         }
     </style>
 </head>
@@ -346,6 +364,7 @@
 
     <div class="popup" id="popup1">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup1')">&times;</button> 
             <h2>Carabao's Milk with Fermented Rice Bran</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel1')">&#10094;</button>
@@ -363,6 +382,7 @@
 
        <div class="popup" id="popup2">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup2')">&times;</button> 
             <h2>Varietal Mixture (VarMix) Technology</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel2')">&#10094;</button>
@@ -392,6 +412,7 @@
 
     <div class="popup" id="popup3">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup3')">&times;</button> 
             <h2>Riding Type Paddy Seeder</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel3')">&#10094;</button>
@@ -440,6 +461,7 @@
 
     <div class="popup" id="popup4">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup4')">&times;</button> 
             <h2>MultiCrop Reduced Till Planter</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel4')">&#10094;</button>
@@ -510,6 +532,7 @@
 
     <div class="popup" id="popup5">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup5')">&times;</button> 
             <h2>Mini Combine Harvester</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel5')">&#10094;</button>
@@ -528,6 +551,7 @@
 
     <div class="popup" id="popup6">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup6')">&times;</button> 
             <h2>Local Mechanized Weeder for straight row planted rice crop</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel6')">&#10094;</button>
@@ -543,6 +567,7 @@
 
     <div class="popup" id="popup7">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup7')">&times;</button> 
             <h2>6D Brown Rice Machine</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel7')">&#10094;</button>
@@ -559,6 +584,7 @@
 
     <div class="popup" id="popup8">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup8')">&times;</button> 
             <h2>Heirloom Thresher</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel8')">&#10094;</button>
@@ -574,6 +600,7 @@
 
     <div class="popup" id="popup9">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup9')">&times;</button> 
             <h2>Improved Nutri Rice Milk</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel9')">&#10094;</button>
@@ -591,6 +618,7 @@
 
     <div class="popup" id="popup10">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup10')">&times;</button> 
             <h2>Improved Rice Wine</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel10')">&#10094;</button>
@@ -608,6 +636,7 @@
 
     <div class="popup" id="popup11">
         <div class="popup-content">
+            <button class="close-button" onclick="closePopup('popup11')">&times;</button> 
             <h2>eDamuhan App Version 3</h2>
             <div class="carousel">
                 <button class="prev" onclick="prevSlide('carousel11')">&#10094;</button>
